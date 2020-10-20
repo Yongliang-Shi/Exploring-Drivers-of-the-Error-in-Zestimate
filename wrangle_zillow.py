@@ -7,6 +7,14 @@ import pandas as pd
 import prepare
 
 # %%
+def add_county_column(row):
+    if row['fips'] == 6037:
+        return 'Los Angeles'
+    elif row['fips'] == 6059:
+        return 'Orange'
+    elif row['fips'] == 6111:
+        return 'Ventura'
+# %%
 def wrangle_zillow_mvp(zillow):
     """
     Wrangle zillow dataset: 
@@ -94,10 +102,12 @@ def wrangle_zillow_clustering_2(zillow):
     zillow.drop(columns=['heatingorsystemtypeid', 'propertylandusetypeid', 'unitcnt', 
                          'assessmentyear', 'transactiondate', 'propertylandusedesc', 
                          'regionidcounty', 'regionidcity', 'regionidzip', 
-                         'rawcensustractandblock', 'censustractandblock', 'propertycountylandusecode'], inplace=True)
-    zillow.heatingorsystemdesc = zillow.heatingorsystemdesc.fillna("None")
-    zillow.drop(columns=["calculatedbathnbr"], inplace=True)
-    train, validate, test = prepare.split_my_data(zillow, pct=0.15)
+                         'rawcensustractandblock', 'censustractandblock', 'propertycountylandusecode',
+                         'heatingorsystemdesc', 'calculatedbathnbr'], inplace=True)
+    zillow.fips = zillow.apply(lambda i: add_county_column(i), axis=1)
+    zillow['error_type'] = (zillow.logerror > 0)
+    zillow.error_type = zillow.error_type.map({True: 1, False: 0})
+    train, validate, test = prepare.split_stratify_my_data(zillow, 'error_type', pct=0.15)
     cols = ["buildingqualitytypeid", "yearbuilt"]     
     for col in cols:
         mode = int(train[col].mode()) 
