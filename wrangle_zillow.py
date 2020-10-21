@@ -107,6 +107,7 @@ def wrangle_zillow_clustering_2(zillow):
     zillow.fips = zillow.apply(lambda i: add_county_column(i), axis=1)
     zillow['error_type'] = (zillow.logerror > 0)
     zillow.error_type = zillow.error_type.map({True: 1, False: 0})
+    zillow = prepare.encode_label(zillow, ['fips'])
     train, validate, test = prepare.split_stratify_my_data(zillow, 'error_type', pct=0.15)
     cols = ["buildingqualitytypeid", "yearbuilt"]     
     for col in cols:
