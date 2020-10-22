@@ -52,6 +52,14 @@ def num_df(df):
     return df_obj
 
 # %%
+def plot_variable_pairs(df):
+    """
+    Pair-plot the variables
+    Parameter: df
+    """
+    return sns.pairplot(df, kind='reg')
+
+# %%
 def sum_missing_values_attributes(df):
     """
     Count how many missing values in each attribute
@@ -74,11 +82,3 @@ def sum_missing_values_cols(df):
     total_rows = df.shape[0]
     cols_missing_values['pct_cols_missing'] = (cols_missing_values.num_rows/total_rows)*100
     return cols_missing_values
-
-# %%
-def plot_variable_pairs(df):
-    """
-    Pair-plot the variables
-    Parameter: df
-    """
-    return sns.pairplot(df, kind='reg')
