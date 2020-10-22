@@ -6,6 +6,15 @@ For this project you will continue working with the zillow dataset. Continue to 
 In addition to continuing work on your previous project, you should incorporate clustering methodologies on this project.<br>
 Your audience for this project is a data science team. The presentation will consist of a notebook demo of the discoveries you made and work you have done related to uncovering what the drivers of the error in the zestimate is.
 
+## Project Organization
+- Jupyter notebooks:
+    - explore_zillow.ipynb: explore the interactions between independent variables and the target varibales using visualization and statistical testing.
+    - cluster_zillow.ipynb: 
+        - Clustering is used to explore the data and 4 combination of features have been tried. 
+        - A conclusion is drawn on whether or not the clusters are helpful/useful.  
+    - model_zillow.ipynb: 6 different models are created and their performance is compared. 
+    - clustering_project_zillow_walkthrough.ipynb: present the most important discoveries that have been made related to the project goals
+
 
 ## Goals
 - To uncover what the drivers of the error in the zestimate.
@@ -13,7 +22,7 @@ Your audience for this project is a data science team. The presentation will con
     - Step 2: Clustering Logerror
     - Step 3: Modeling and Evalution
 
-### Specification
+## Specification
 - You are expected to deliver a github repository with the following contents:
 - A clearly named final notebook. This notebook will be what you present and should contain plenty of markdown documentation and cleaned up code.
 - A README that explains what the project is, how to reproduce your work, and your notes from project planning.
