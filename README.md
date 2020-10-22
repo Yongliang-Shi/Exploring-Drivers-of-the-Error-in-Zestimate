@@ -1,33 +1,42 @@
 # Exploring the Drivers of the Error in the Zestimate
 
-## Description
-
-For this project you will continue working with the zillow dataset. Continue to use the 2017 properties and predictions data for single unit / single family homes.<br>
-In addition to continuing work on your previous project, you should incorporate clustering methodologies on this project.<br>
-Your audience for this project is a data science team. The presentation will consist of a notebook demo of the discoveries you made and work you have done related to uncovering what the drivers of the error in the zestimate is.
-
-## Project Organization
-- Jupyter notebooks:
-    - explore_zillow.ipynb: explore the interactions between independent variables and the target varibales using visualization and statistical testing.
-    - cluster_zillow.ipynb: 
-        - Clustering is used to explore the data and 4 combination of features have been tried. 
-        - A conclusion is drawn on whether or not the clusters are helpful/useful.  
-    - model_zillow.ipynb: 6 different models are created and their performance is compared. 
-    - clustering_project_zillow_walkthrough.ipynb: present the most important discoveries that have been made related to the project goals
-
+## Introduction
+- For this project you will continue working with the zillow dataset. Continue to use the 2017 properties and predictions data for single unit / single family homes.
+- In addition to continuing work on your previous project, you should incorporate clustering methodologies on this project.
+- Your audience for this project is a data science team. The presentation will consist of a notebook demo of the discoveries you made and work you have done related to uncovering what the drivers of the error in the zestimate is.
 
 ## Goals
-- To uncover what the drivers of the error in the zestimate.
-    - Step 1: Explore the Target Variable: Logerror
-    - Step 2: Clustering Logerror
-    - Step 3: Modeling and Evalution
+To uncover what the drivers of the error in the zestimate by three stages
+    - Stage 1: Explore the Target Variable: Logerror
+    - Stage 2: Clustering Logerror
+    - Stage 3: Modeling and Evalution
 
-## Specification
-- You are expected to deliver a github repository with the following contents:
-- A clearly named final notebook. This notebook will be what you present and should contain plenty of markdown documentation and cleaned up code.
-- A README that explains what the project is, how to reproduce your work, and your notes from project planning.
-- A Python module or modules that automate the data acquisition and preparation process. These modules should be imported and used in your final notebook.
-
+## Documents in the Repo
+- Jupyter notebooks:
+    - explore_zillow.ipynb: 
+        - Explore the interactions between independent variables and the target varibales using visualization and statistical testing.
+    - cluster_zillow.ipynb: 
+        - Clustering is used to explore the data and 4 combination of features have been tried. 
+        - A conclusion is drawn on whether or not the clusters are helpful/useful. 
+    - model_zillow.ipynb: 
+        - Six different models are created and their performance is compared. 
+    - clustering_project_zillow_walkthrough.ipynb
+        - Present the most important discoveries that have been made related to the project goals.
+- src:
+    - acquire.py: 
+        - functions to collect the zillow dataset from the codeup cloud database with approariate query. 
+    - summarize.py:
+        - functions used to summarize the zillow dataset.
+    - prepare.py:
+        - functions used to address duplicates, missing values and outliers in the zillow dataset.
+        - functions used to encode, split and scale the zillow dataset.
+    - wrangle_zillow.py:
+        - functions to produce train, validate and test dataset ready for either exploration or modeling. 
+    - features.py:
+        - functions to return top k selected features based on SelectKBest and RFE classes.
+    - model.py:
+        - functions to group a dataset into k clusters based on K-Means
+        - functions to plot residual plots. 
 
 ## Data Dictionary
 
@@ -57,7 +66,7 @@ Your audience for this project is a data science team. The presentation will con
 | taxamount | The amount paid in taxes by the landowner in USD |
 | taxvaluedollarcnt | The tax accessed value of the property in USD |
 | censustractandblock | Redundant with rarcensustractandblock |
-| logerror | Unknown |
+| logerror |  |
 | transactiondate | Four digit year, two digit month, two digit date | 
 | taxrate | Rounded derived value by dividing the taxamount by the taxvaluedollarcnt and multiplying by 100 |
 | County | County the property is located in | 
