@@ -6,12 +6,16 @@
 - Your audience for this project is a data science team. The presentation will consist of a notebook demo of the discoveries you made and work you have done related to uncovering what the drivers of the error in the zestimate is.
 
 ## Goals
-To uncover what the drivers of the error in the zestimate by three stages
+To uncover what the drivers of the error in the zestimate by three stages.<br>
     - Stage 1: Explore the Target Variable: Logerror
     - Stage 2: Clustering Logerror
     - Stage 3: Modeling and Evalution
 
 ## Documents in the Repo
+- README.md:
+    - Overview of the zillow clustering project 
+- .gitignore:
+    - files to be ignored. 
 - Jupyter notebooks:
     - explore_zillow.ipynb: 
         - Explore the interactions between independent variables and the target varibales using visualization and statistical testing.
