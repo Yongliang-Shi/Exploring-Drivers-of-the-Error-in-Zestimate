@@ -13,7 +13,7 @@ To uncover what the drivers of the error in the zestimate by three steps.<br>
 
 ## Key Findings and Takeaways
 
-![clustering_zillow.png](https://drive.google.com/file/d/1IQXbrdULmm_3ajGVh_sjiNmr03yruNbu/view?usp=sharing)
+![clustering zillow dataset](https://github.com/Yongliang-Shi/clustering-project/blob/main/cluster_zillow.png)
 
 - The biggest driver of the logerror is taxvlauedollarcnt.
 - The zillow dataset can be clustered into 6 distinct groups based on logerror and property value.
