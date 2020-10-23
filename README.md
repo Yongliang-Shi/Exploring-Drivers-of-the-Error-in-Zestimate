@@ -12,7 +12,9 @@ To uncover what the drivers of the error in the zestimate by three steps.<br>
     - Stage 3: Modeling and Evalution.<br>
 
 ## Key Findings and Takeaways
-![Clustering ZillowDataset](file:///Users/mms3-pro/codeup-data-science/clustering-project/cluster_zillow.png)
+
+![clustering_zillow.png](https://drive.google.com/file/d/1IQXbrdULmm_3ajGVh_sjiNmr03yruNbu/view?usp=sharing)
+
 - The biggest driver of the logerror is taxvlauedollarcnt.
 - The zillow dataset can be clustered into 6 distinct groups based on logerror and property value.
 - Medium/high nagetive logerror has an obvious cluster in LA country.
