@@ -6,10 +6,19 @@
 - Your audience for this project is a data science team. The presentation will consist of a notebook demo of the discoveries you made and work you have done related to uncovering what the drivers of the error in the zestimate is.
 
 ## Goals
-To uncover what the drivers of the error in the zestimate by three stages.<br>
-    - Stage 1: Explore the Target Variable: Logerror
-    - Stage 2: Clustering Logerror
-    - Stage 3: Modeling and Evalution
+To uncover what the drivers of the error in the zestimate by three steps.<br>
+    - Stage 1: Explore the Target Variable: Logerror.<br>
+    - Stage 2: Clustering Logerror.<br>
+    - Stage 3: Modeling and Evalution.<br>
+
+## Key Findings and Takeaways
+![Clustering ZillowDataset](file:///Users/mms3-pro/codeup-data-science/clustering-project/cluster_zillow.png)
+- The biggest driver of the logerror is taxvlauedollarcnt.
+- The zillow dataset can be clustered into 6 distinct groups based on logerror and property value.
+- Medium/high nagetive logerror has an obvious cluster in LA country.
+- No specific clusters of medium/high positve logerror are found based on location. 
+- The top model is the LinearRegression with rfe features and it beats the baseline by redcuing 50% of te RMSE. 
+- A new created categorical feature 'error_type' plays an crucial role in improving the model performance and keep the model from being overfit.
 
 ## Documents in the Repo
 - README.md:
@@ -94,12 +103,6 @@ The following considerations were taken with the data:
         * Inferred Single Family Residence
 2. Records containing 0 bathrooms, 0 bedrooms, or null square footage were dropped
 3. Duplicate records were dropped. These entries may represent "back-to-back" closings on the same day between three parties.
-
-## Key Findings and Takeaways
- - The logerror is tends to increase as the property value drops.
-- The logerror can be clustered into 6 groups based on the property value and error range.¶
-- No specific clusters of medium/high positve logerror are found based on longitude and latitude.
-- Medium/high nagetive logerror has a obvious cluster in LA country.
 
 ## How to Reproduce
 
